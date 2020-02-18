@@ -8,6 +8,8 @@ function App() {
  let [homeScore, setHomeScore] = useState(0);
  let [awayScore, setAwayScore] = useState(0);
  let [time, setTimer] = useState(0.03);
+
+
 //  this is array destructuring
 //  the first value sets our state and the second value is a way to update state
   return (
@@ -34,10 +36,15 @@ function App() {
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button className="homeButtons__touchdown" onClick={() => setHomeScore(homeScore + 6)}>Home Touchdown</button>
           <button className="homeButtons__fieldGoal" onClick={() => setHomeScore(homeScore + 3)}>Home Field Goal</button>
+          {/* <button className="reset_score" onClick={() => setHomeScore(0)}>Reset Score Board</button> */}
+        </div>
+        <div className="reset" >
+        <button onClick={()=>{setAwayScore(0);setHomeScore(0)}}>New Game!</button>
         </div>
         <div className="awayButtons">
           <button className="awayButtons__touchdown" onClick={() => setAwayScore(awayScore + 6)}>Away Touchdown</button>
           <button className="awayButtons__fieldGoal" onClick={() => setAwayScore(awayScore + 3)}>Away Field Goal</button>
+          {/* <button className="reset_score" onClick={() => setAwayScore(0)}>Reset Score Board</button> */}
         </div>
       </section>
     </div>
